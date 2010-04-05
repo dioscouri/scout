@@ -27,6 +27,8 @@
 			<?php echo JText::_( "Copyright" ); ?>: <?php echo Scout::getCopyrightYear(); ?> &copy; <a href="<?php echo $url; ?>" target="_blank">Dioscouri Design</a>
 			<br/>
 			<?php echo JText::_( "Version" ); ?>: <?php echo Scout::getVersion(); ?>
+			<br/>
+			<?php echo sprintf( JText::_('PHP_VERSION_LINE'), Scout::getMinPhp(), Scout::getServerPhp() );?>
 		</td>
 		<td style="text-align: right; width: 33%;">
 			<a href="<?php echo $url; ?>" target="_blank"><img src="<?php echo $img_path."/".$img_file;?>"></img></a>
