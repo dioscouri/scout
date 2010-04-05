@@ -18,6 +18,7 @@ class Scout extends JObject
     static $_name 			= 'scout';
     static $_min_php		= '5.2';
 
+    
     /**
      * Get the version
      */
