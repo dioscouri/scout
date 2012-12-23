@@ -1,0 +1,9 @@
+cfg.name=scout
+cfg.versionDir=
+cfg.buildDir=packages
+cfg.localhostRoot=../CrowdFunding/crowdfunding
+cfg.xmlfile=build.xml
+ftp.server=
+ftp.user=
+ftp.password=
+ftp.dir=

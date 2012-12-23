@@ -1,11 +1,12 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
 
 	<?php
+	$defines = Scout::getInstance();
 		$img_file = "dioscouri_logo_transparent.png";
 		$img_path = "../media/com_scout/images";
 
 		$url = "http://www.dioscouri.com/";
-		if ($amigosid = ScoutConfig::getInstance()->get( 'amigosid', '' ))
+		if ($amigosid = $defines->getInstance()->get( 'amigosid', '' ))
 		{
 			$url .= "?amigosid=".$amigosid;
 		}
@@ -25,11 +26,11 @@
 		<td style="text-align: center; width: 33%;">
 			<?php echo JText::_( "Scout" ); ?>: <?php echo JText::_( "Scout Desc" ); ?>
 			<br/>
-			<?php echo JText::_( "Copyright" ); ?>: <?php echo Scout::getCopyrightYear(); ?> &copy; <a href="<?php echo $url; ?>" target="_blank">Dioscouri Design</a>
+			<?php echo JText::_( "Copyright" ); ?>: <?php echo $defines->getCopyrightYear(); ?> &copy; <a href="<?php echo $url; ?>" target="_blank">Dioscouri Design</a>
 			<br/>
-			<?php echo JText::_( "Version" ); ?>: <?php echo Scout::getVersion(); ?>
+			<?php echo JText::_( "Version" ); ?>: <?php echo $defines->getVersion(); ?>
 			<br/>
-			<?php echo sprintf( JText::_('PHP_VERSION_LINE'), Scout::getMinPhp(), Scout::getServerPhp() );?>
+			<?php echo sprintf( JText::_('PHP_VERSION_LINE'), $defines->getMinPhp(), $defines->getServerPhp() );?>
 		</td>
 		<td style="text-align: right; width: 33%;">
 			<a href="<?php echo $url; ?>" target="_blank"><img src="<?php echo $img_path."/".$img_file;?>"></img></a>

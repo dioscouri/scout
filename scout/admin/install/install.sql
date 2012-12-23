@@ -1,12 +1,12 @@
 -- -----------------------------------------------------
 -- Table `#__scout_config`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `#__scout_config` (
+CREATE TABLE IF NOT EXISTS `#__scout_config` (
   `config_id` INT(11) NOT NULL AUTO_INCREMENT ,
   `config_name` VARCHAR(255) NOT NULL ,
   `value` TEXT NOT NULL ,
   PRIMARY KEY (`config_id`) )
-TYPE = MyISAM
+ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8;
 
 -- --------------------------------------------------------

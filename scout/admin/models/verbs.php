@@ -11,7 +11,11 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.models._base', JPATH_ADMINISTRATOR.DS.'components' );
+if ( !class_exists('Scout') ) 
+             JLoader::register( "Scout", JPATH_ADMINISTRATOR."/components/com_scout/defines.php" );
+        
+
+Scout::load('ScoutModelBase','models.base');
 
 class ScoutModelVerbs extends ScoutModelBase 
 {
@@ -64,14 +68,12 @@ class ScoutModelVerbs extends ScoutModelBase
             $query->where('LOWER(tbl.verb_value) LIKE '.$key);
         }
     }
-        	
-	public function getList()
-	{
-		$list = parent::getList(); 
-		foreach(@$list as $item)
-		{
-			$item->link = 'index.php?option=com_scout&controller=verbs&view=verbs&task=edit&id='.$item->verb_id;
-		}
-		return $list;
-	}
+       protected function prepareItem( &$item, $key=0, $refresh=false )
+    {
+         $item->link = 'index.php?option=com_scout&controller=verbs&view=verbs&task=edit&id='.$item->verb_id;
+            
+            parent::prepareItem(&$item, $key, $refresh );
+        
+    }
+
 }

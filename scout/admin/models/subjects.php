@@ -11,7 +11,11 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.models._base', JPATH_ADMINISTRATOR.DS.'components' );
+if ( !class_exists('Scout') ) 
+             JLoader::register( "Scout", JPATH_ADMINISTRATOR."/components/com_scout/defines.php" );
+        
+
+Scout::load('ScoutModelBase','models.base');
 
 class ScoutModelSubjects extends ScoutModelBase 
 {
@@ -64,14 +68,12 @@ class ScoutModelSubjects extends ScoutModelBase
             $query->where('LOWER(tbl.subject_value) LIKE '.$key);
         }
     }
-        	
-	public function getList()
-	{
-		$list = parent::getList(); 
-		foreach(@$list as $item)
-		{
-			$item->link = 'index.php?option=com_scout&controller=subjects&view=subjects&task=edit&id='.$item->subject_id;
-		}
-		return $list;
-	}
+      protected function prepareItem( &$item, $key=0, $refresh=false )
+    {
+          $item->link = 'index.php?option=com_scout&controller=subjects&view=subjects&task=edit&id='.$item->subject_id;
+            
+            parent::prepareItem(&$item, $key, $refresh );
+        
+    }   	
+	
 }

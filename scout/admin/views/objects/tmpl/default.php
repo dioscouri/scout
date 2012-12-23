@@ -6,7 +6,7 @@
 
 <form action="<?php echo JRoute::_( @$form['action'] )?>" method="post" name="adminForm" enctype="multipart/form-data">
 
-	<?php echo ScoutGrid::pagetooltip( JRequest::getVar('view') ); ?>
+	<?php echo DSCGrid::pagetooltip( JRequest::getVar('view') ); ?>
 	
     <table>
         <tr>
@@ -30,19 +30,19 @@
                 	<input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count( @$items ); ?>);" />
                 </th>
                 <th style="width: 50px;">
-                	<?php echo ScoutGrid::sort( 'ID', "tbl.object_id", @$state->direction, @$state->order ); ?>
+                	<?php echo DSCGrid::sort( 'ID', "tbl.object_id", @$state->direction, @$state->order ); ?>
                 </th>
                 <th style="width: 50px;">
-                    <?php echo ScoutGrid::sort( 'Site', "client_id", @$state->direction, @$state->order ); ?>
+                    <?php echo DSCGrid::sort( 'Site', "client_id", @$state->direction, @$state->order ); ?>
                 </th>
                 <th style="width: 125px;">
-                    <?php echo ScoutGrid::sort( 'Scope', "scope_name", @$state->direction, @$state->order ); ?>
+                    <?php echo DSCGrid::sort( 'Scope', "scope_name", @$state->direction, @$state->order ); ?>
                 </th>                
                 <th style="text-align: left;">
-                	<?php echo ScoutGrid::sort( 'Name', "tbl.object_name", @$state->direction, @$state->order ); ?>
+                	<?php echo DSCGrid::sort( 'Name', "tbl.object_name", @$state->direction, @$state->order ); ?>
                 </th>
                 <th style="width: 100px;">
-    	            <?php echo ScoutGrid::sort( 'Value', "tbl.object_value", @$state->direction, @$state->order ); ?>
+    	            <?php echo DSCGrid::sort( 'Value', "tbl.object_value", @$state->direction, @$state->order ); ?>
                 </th>
             </tr>
             <tr class="filterline">
@@ -58,7 +58,7 @@
                 	</div>
                 </th>
                 <th style="text-align: left;">
-                    <?php echo ScoutSelect::booleans( @$state->filter_client, 'filter_client', $attribs, 'filter_client', true, 'Select Site', 'Admin', 'Site' ); ?>
+                    <?php echo DSCSelect::booleans( @$state->filter_client, 'filter_client', $attribs, 'filter_client', true, 'Select Site', 'Admin', 'Site' ); ?>
                 </th>
                 <th style="text-align: left;">
                     <input id="filter_scope" name="filter_scope" value="<?php echo @$state->filter_scope; ?>" size="25"/>
@@ -93,7 +93,7 @@
 					<?php echo $i + 1; ?>
 				</td>
 				<td style="text-align: center;">
-					<?php echo ScoutGrid::checkedout( $item, $i, 'object_id' ); ?>
+					<?php echo DSCGrid::checkedout( $item, $i, 'object_id' ); ?>
 				</td>
 				<td style="text-align: center;">
 					<a href="<?php echo $item->link; ?>">

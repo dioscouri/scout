@@ -11,7 +11,11 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.models._base', JPATH_ADMINISTRATOR.DS.'components' );
+if ( !class_exists('Scout') ) 
+             JLoader::register( "Scout", JPATH_ADMINISTRATOR."/components/com_scout/defines.php" );
+        
+
+Scout::load('ScoutModelBase','models.base');
 
 class ScoutModelConfig extends ScoutModelBase 
 {

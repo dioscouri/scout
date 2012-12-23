@@ -11,7 +11,11 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.models._base', JPATH_ADMINISTRATOR.DS.'components' );
+if ( !class_exists('Scout') ) 
+             JLoader::register( "Scout", JPATH_ADMINISTRATOR."/components/com_scout/defines.php" );
+        
+
+Scout::load('ScoutModelBase','models.base');
 
 class ScoutModelScopes extends ScoutModelBase 
 {
@@ -78,14 +82,14 @@ class ScoutModelScopes extends ScoutModelBase
             $query->where('tbl.client_id = '.(int) $filter_client);
         }
     }
-        	
-	public function getList()
-	{
-		$list = parent::getList(); 
-		foreach(@$list as $item)
-		{
-			$item->link = 'index.php?option=com_scout&controller=scopes&view=scopes&task=edit&id='.$item->scope_id;
-		}
-		return $list;
-	}
+     
+  protected function prepareItem( &$item, $key=0, $refresh=false )
+    {
+      $item->link = 'index.php?option=com_scout&controller=scopes&view=scopes&task=edit&id='.$item->scope_id;
+            
+            parent::prepareItem(&$item, $key, $refresh );
+        
+    }
+
+
 }

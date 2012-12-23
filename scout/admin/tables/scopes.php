@@ -11,11 +11,10 @@
 /** ensure this file is being included by a parent file */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-JLoader::import( 'com_scout.tables._base', JPATH_ADMINISTRATOR.DS.'components' );
 
-class ScoutTableScopes extends ScoutTable 
+class ScoutTableScopes extends DSCTable 
 {
-	function ScoutTableScopes( &$db ) 
+	public function ScoutTableScopes( &$db ) 
 	{
 		
 		$tbl_key 	= 'scope_id';

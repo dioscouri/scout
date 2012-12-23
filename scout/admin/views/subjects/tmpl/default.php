@@ -6,7 +6,7 @@
 
 <form action="<?php echo JRoute::_( @$form['action'] )?>" method="post" name="adminForm" enctype="multipart/form-data">
 
-	<?php echo ScoutGrid::pagetooltip( JRequest::getVar('view') ); ?>
+	<?php echo DSCGrid::pagetooltip( JRequest::getVar('view') ); ?>
 	
     <table>
         <tr>
@@ -30,16 +30,16 @@
                 	<input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count( @$items ); ?>);" />
                 </th>
                 <th style="width: 50px;">
-                	<?php echo ScoutGrid::sort( 'ID', "tbl.subject_id", @$state->direction, @$state->order ); ?>
+                	<?php echo DSCGrid::sort( 'ID', "tbl.subject_id", @$state->direction, @$state->order ); ?>
                 </th>                
                 <th style="text-align: left;">
-                	<?php echo ScoutGrid::sort( 'Name', "tbl.subject_name", @$state->direction, @$state->order ); ?>
+                	<?php echo DSCGrid::sort( 'Name', "tbl.subject_name", @$state->direction, @$state->order ); ?>
                 </th>
                 <th style="width: 100px;">
-    	            <?php echo ScoutGrid::sort( 'Value', "tbl.subject_value", @$state->direction, @$state->order ); ?>
+    	            <?php echo DSCGrid::sort( 'Value', "tbl.subject_value", @$state->direction, @$state->order ); ?>
                 </th>
                 <th style="width: 100px;">
-                    <?php echo ScoutGrid::sort( 'Type', "subject_type", @$state->direction, @$state->order ); ?>
+                    <?php echo DSCGrid::sort( 'Type', "subject_type", @$state->direction, @$state->order ); ?>
                 </th>
             </tr>
             <tr class="filterline">
@@ -87,7 +87,7 @@
 					<?php echo $i + 1; ?>
 				</td>
 				<td style="text-align: center;">
-					<?php echo ScoutGrid::checkedout( $item, $i, 'subject_id' ); ?>
+					<?php echo DSCGrid::checkedout( $item, $i, 'subject_id' ); ?>
 				</td>
 				<td style="text-align: center;">
 					<a href="<?php echo $item->link; ?>">

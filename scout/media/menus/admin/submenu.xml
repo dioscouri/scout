@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<menu>
+   <link>
+       <name>Dashboard</name>
+       <url>index.php?option=com_scout&#38;view=dashboard</url>
+   </link>
+   <link>
+       <name>Logs</name>
+       <url>index.php?option=com_scout&#38;view=logs</url>
+   </link>
+   <link>
+       <name>Objects</name>
+       <url>index.php?option=com_scout&#38;view=objects</url>
+   </link>
+   <link>
+       <name>Scopes</name>
+       <url>index.php?option=com_scout&#38;view=scopes</url>
+   </link>
+   <link>
+       <name>Subjects</name>
+       <url>index.php?option=com_scout&#38;view=subjects</url>
+   </link>
+   <link>
+       <name>Verbs</name>
+       <url>index.php?option=com_scout&#38;view=verbs</url>
+   </link>
+   <link>
+       <name>Configuration</name>
+       <url>index.php?option=com_scout&#38;view=config</url>
+   </link>
+</menu>

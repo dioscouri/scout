@@ -55,8 +55,8 @@
 		</sql>
 	</install>
 	
-	<installfile>install/install.php</installfile>
-	<uninstallfile>install/uninstall.php</uninstallfile>
+	<installfile>install.php</installfile>
+	<uninstallfile>uninstall.php</uninstallfile>
 
 	<!--  Media -->
 	<media destination="com_scout" folder="media">
@@ -68,12 +68,19 @@
 		
 	<!-- Modules -->	
 	<modules>
-		<!-- <module module="mod_whatever" publish="true" client="site"/> -->
+		 <module module="modules/mod_scout_activity" publish="true" client="administrator" position="cpanel" />
 	</modules> 
 
 	<!-- Plugins -->
 	<plugins>
-		<!-- <plugin plugin="scout_plugin_user" publish="true" group="user"/> -->
-		<plugin plugin="scout_plugin_content" publish="true" group="content" element="scout" />
+		 <plugin plugin="plugins/scout_plugin_ambrasubs" publish="true" group="ambrasubs" element="scout" />
+        <plugin plugin="plugins/scout_plugin_billets" publish="true" group="billets" element="scout" />
+        <plugin plugin="plugins/scout_plugin_community" publish="true" group="community" element="scout" />
+		<plugin plugin="plugins/scout_plugin_content" publish="true" group="content" element="scout" />
+        <plugin plugin="plugins/scout_plugin_k2" publish="true" group="k2" element="scout" />
+        <plugin plugin="plugins/scout_plugin_koowa" publish="true" group="koowa" element="scout" />
+		<plugin plugin="plugins/scout_plugin_system" publish="true" group="system" element="scout" />
+        <plugin plugin="plugins/scout_plugin_tienda" publish="true" group="tienda" element="scout" />
+        <plugin plugin="plugins/scout_plugin_user" publish="true" group="user" element="scout" />
 	</plugins>
 </install>

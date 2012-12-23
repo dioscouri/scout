@@ -11,11 +11,10 @@
 /** ensure this file is being included by a parent file */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-JLoader::import( 'com_scout.tables._base', JPATH_ADMINISTRATOR.DS.'components' );
 
-class ScoutTableSubjects extends ScoutTable 
+class ScoutTableSubjects extends DSCTable 
 {
-	function ScoutTableSubjects ( &$db ) 
+	public function ScoutTableSubjects ( &$db ) 
 	{
 		
 		$tbl_key 	= 'subject_id';

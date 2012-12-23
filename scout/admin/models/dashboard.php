@@ -11,15 +11,14 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.models._base', JPATH_ADMINISTRATOR.DS.'components' );
+class ScoutModelDashboard extends DSCModel 
+{	
 
-class ScoutModelDashboard extends ScoutModelBase 
-{
-	function getTable()
+	function getTable($name='Config', $prefix='ScoutTable', $options = array())
 	{
-		JTable::addIncludePath( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_scout'.DS.'tables' );
-		$table = JTable::getInstance( 'Config', 'ScoutTable' );
-		return $table;
+		return parent::getTable($name, $prefix, $options);
 	}
+
+	
 
 }

@@ -1,6 +1,5 @@
 <?php
 /**
- * @version	1.5
  * @package	Scout
  * @author 	Dioscouri Design
  * @link 	http://www.dioscouri.com
@@ -11,15 +10,10 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.views._base', JPATH_ADMINISTRATOR.DS.'components' );
+Scout::load('ScoutViewBase','views.base');
 
 class ScoutViewConfig extends ScoutViewBase 
 {
-	/**
-	 * 
-	 * @param $tpl
-	 * @return unknown_type
-	 */
 	function getLayoutVars($tpl=null) 
 	{
 		$layout = $this->getLayout();
@@ -32,32 +26,29 @@ class ScoutViewConfig extends ScoutViewBase
 		}
 	}
 	
-	/**
-	 * 
-	 * @return void
-	 **/
 	function _default($tpl = null) 
 	{
-		JLoader::import( 'com_scout.library.select', JPATH_ADMINISTRATOR.DS.'components' );
-		JLoader::import( 'com_scout.library.grid', JPATH_ADMINISTRATOR.DS.'components' );
-		JLoader::import( 'com_scout.library.tools', JPATH_ADMINISTRATOR.DS.'components' );
-
 		// check config
-			$row = ScoutConfig::getInstance();
+			$row = Scout::getInstance();
 			$this->assign( 'row', $row );
 		
 		// add toolbar buttons
 			JToolBarHelper::save('save');
 			JToolBarHelper::cancel( 'close', JText::_( 'Close' ) );
 			
+			// add the core ACL options button only if access allows them to
+			if (JFactory::getUser()->authorise('core.admin', 'com_scout')) {
+			    JToolBarHelper::preferences('com_scout');
+			}
+			
 		// plugins
         	$filtered = array();
-	        $items = ScoutHelperTools::getPlugins();
+	        $items = DSCTools::getPlugins( 'Scout' );
 			for ($i=0; $i<count($items); $i++) 
 			{
 				$item = &$items[$i];
 				// Check if they have an event
-				if ($hasEvent = ScoutHelperTools::hasEvent( $item, 'onListConfigScout' )) {
+				if ($hasEvent = DSCTools::hasEvent( $item, 'onListConfigScout', 'Scout' )) {
 					// add item to filtered array
 					$filtered[] = $item;
 				}

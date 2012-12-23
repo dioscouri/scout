@@ -11,11 +11,10 @@
 /** ensure this file is being included by a parent file */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-JLoader::import( 'com_scout.tables._base', JPATH_ADMINISTRATOR.DS.'components' );
 
-class ScoutTableVerbs extends ScoutTable 
+class ScoutTableVerbs extends DSCTable 
 {
-	function ScoutTableVerbs( &$db ) 
+	public function ScoutTableVerbs( &$db ) 
 	{
 		
 		$tbl_key 	= 'verb_id';

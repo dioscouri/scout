@@ -11,9 +11,7 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.helpers._base', JPATH_ADMINISTRATOR.DS.'components' );
-
-class ScoutHelperUser extends ScoutHelperBase
+class ScoutHelperUser extends DSCHelperUser
 {
     /**
      * Gets a users basic information
@@ -58,18 +56,7 @@ class ScoutHelperUser extends ScoutHelperBase
 		return $return;
 	}
 	
-	/**
-	 * Gets a user's geozone
-	 * @param unknown_type $userid
-	 * @return unknown_type
-	 */
-	function getGeoZone( $userid )
-	{
-		// TODO Finish this
-		// first, attempt by their default shipping zone
-		// if not, then by their last order shipping zone
-		// if not, then attempt to get their geozone using geoIP location tools
-	}
+
 	
 	/**
 	 * 
