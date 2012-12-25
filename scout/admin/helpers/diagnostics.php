@@ -11,9 +11,7 @@
 /** ensure this file is being included by a parent file */
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import( 'com_scout.helpers._base', JPATH_ADMINISTRATOR.DS.'components' );
-
-class ScoutHelperDiagnostics extends ScoutHelperBase 
+class ScoutHelperDiagnostics extends DSCHelperDiagnostics 
 {
 	/**
 	 * Performs basic checks on your Scout installation to ensure it is configured OK
