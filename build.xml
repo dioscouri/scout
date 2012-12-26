@@ -34,7 +34,7 @@
     <property name="cfg.comDir" value="${basedir}/${cfg.comName}" />
     <property name="cfg.buildVersionDir" value="${cfg.buildDir}" />
     <property name="cfg.plgPrefix" value="tienda_plugin_" />
-    <property name="cfg.modPrefix" value="mod_tienda_" />
+    <property name="cfg.modPrefix" value="mod_scout_" />
     <property name="cfg.langPrefix" value="tienda_translation_" />
     <property name="cfg.langDir" value="${basedir}/language_packages" />
     <property name="cfg.adminFilesDir" location="${cfg.comDir}/admin" />
@@ -106,8 +106,12 @@
         <copy todir="${destdir}/administrator/components/com_${cfg.comName}" preservelastmodified="true" overwrite="true">
             <fileset file="${cfg.comDir}/manifest.xml" />
         </copy>
-        <copy todir="${destdir}/components/com_${cfg.comName}" preservelastmodified="true" overwrite="true">
-            <fileset dir="${cfg.siteFilesDir}" />
+        <copy todir="${destdir}/administrator/modules/mod_scout_activity" preservelastmodified="true" overwrite="true">
+            <fileset dir="${cfg.name}/modules/mod_scout_activity" />
+        </copy>
+        <!-- MEDIA FILES -->
+        <copy todir="${destdir}/administrator/com_${cfg.comName}" preservelastmodified="true" overwrite="true">
+            <fileset dir="${cfg.mediaFilesDir}" />
         </copy>
         <!-- MEDIA FILES -->
         <copy todir="${destdir}/media/com_${cfg.comName}" preservelastmodified="true" overwrite="true">

@@ -8,17 +8,8 @@
 
 	<?php echo DSCGrid::pagetooltip( JRequest::getVar('view') ); ?>
 	
-    <table>
-        <tr>
-            <td align="left" width="100%">
-            </td>
-            <td nowrap="nowrap">
-                <input name="filter" value="<?php echo @$state->filter; ?>" />
-                <button onclick="this.form.submit();"><?php echo JText::_('Search'); ?></button>
-                <button onclick="scoutFormReset(this.form);"><?php echo JText::_('Reset'); ?></button>
-            </td>
-        </tr>
-    </table>
+    <?php echo DSCGrid::searchform(@$state->filter ) ?>
+
 
 	<table class="adminlist" style="clear: both;">
 		<thead>
@@ -44,16 +35,16 @@
             </tr>
             <tr class="filterline">
                 <th colspan="3">
-                	<?php $attribs = array('class' => 'inputbox', 'size' => '1', 'onchange' => 'document.adminForm.submit();'); ?>
-                	<div class="range">
-	                	<div class="rangeline">
-	                		<span class="label"><?php echo JText::_("From"); ?>:</span> <input id="filter_id_from" name="filter_id_from" value="<?php echo @$state->filter_id_from; ?>" size="5" class="input" />
-	                	</div>
-	                	<div class="rangeline">
-	                		<span class="label"><?php echo JText::_("To"); ?>:</span> <input id="filter_id_to" name="filter_id_to" value="<?php echo @$state->filter_id_to; ?>" size="5" class="input" />
-	                	</div>
-                	</div>
-                </th>                
+                    <?php $attribs = array('class' => 'inputbox', 'onchange' => 'document.adminForm.submit();'); ?>
+                     <div class="range">
+                        <div class="rangeline">
+                            <input type="text" placeholder="<?php echo JText::_("From"); ?>" id="filter_id_from" name="filter_id_from" value="<?php echo @$state->filter_id_from; ?>" size="5" class="input input-tiny" />
+                        </div>
+                        <div class="rangeline">
+                            <input type="text" placeholder="<?php echo JText::_("To"); ?>" id="filter_id_to" name="filter_id_to" value="<?php echo @$state->filter_id_to; ?>" size="5" class="input input-tiny" />
+                        </div>
+                    </div>
+                </th>             
                 <th style="text-align: left;">
                 	<input id="filter_name" name="filter_name" value="<?php echo @$state->filter_name; ?>" size="25"/>
                 </th>

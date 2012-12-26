@@ -11,7 +11,7 @@ defined('_JEXEC') or die('Restricted Access');
 
 require_once(dirname(__FILE__).DS.'helper.php');
 
-$document = &JFactory::getDocument();
+$document = JFactory::getDocument();
 $helper = new modScoutActivityHelper();
 
 if ($helper->isInstalled())
