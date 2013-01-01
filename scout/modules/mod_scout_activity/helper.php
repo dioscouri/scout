@@ -9,7 +9,7 @@ class modScoutActivityHelper
 		$success = false;
 
 		jimport( 'joomla.filesystem.file' );
-		$filePath = JPATH_ADMINISTRATOR.DS.'components'.DS.'com_scout'.DS.'scout.php';
+		$filePath = JPATH_ADMINISTRATOR.'/components/com_scout/scout.php';
 		if (JFile::exists($filePath))
 		{
 			$success = true;
@@ -19,8 +19,8 @@ class modScoutActivityHelper
 		
 	function getSiteWideActivity($limit) 
 	{
-		JModel::addIncludePath( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_scout'.DS.'models' );
-		JTable::addIncludePath( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_scout'.DS.'tables' );
+		JModel::addIncludePath( JPATH_ADMINISTRATOR.'/components/com_scout/models' );
+		JTable::addIncludePath( JPATH_ADMINISTRATOR.'/components/com_scout/tables' );
 		
 		$model = JModel::getInstance( 'Logs', 'ScoutModel' );
         $model->setState( 'order', 'tbl.datetime' );

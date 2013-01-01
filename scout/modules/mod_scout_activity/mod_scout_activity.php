@@ -9,7 +9,7 @@
  
 defined('_JEXEC') or die('Restricted Access');
 
-require_once(dirname(__FILE__).DS.'helper.php');
+require_once(dirname(__FILE__).'/helper.php');
 
 $document = JFactory::getDocument();
 $helper = new modScoutActivityHelper();

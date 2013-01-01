@@ -5,7 +5,7 @@ $document->addStyleSheet( JURI::root(true).'/administrator/modules/mod_scout_act
 ?>
 
 <?php if ($items) : ?>
-    <?php echo "<span id='scout_subheader'>".sprintf( JText::_( "LAST_X_ENTRIES" ), $limit )."</span>"; ?>
+    <?php echo "<span id='scout_subheader'>".sprintf( JText::_( "MOD_AMBRA_LAST_X_ENTRIES" ), $limit )."</span>"; ?>
 	<ul id="scout_activity">
 		<?php foreach ($items as $item) : ?>
 		<li class="scout_logitem">
@@ -32,13 +32,13 @@ $document->addStyleSheet( JURI::root(true).'/administrator/modules/mod_scout_act
 			echo "</span>";
             echo ' '.strtolower(JText::_("on")).' ';
             echo "<span class='scout_datetime'>";
-                echo JHTML::_( 'date', $item->datetime, '%a, %d %b %Y, %I:%M%p' );
+                echo JHTML::_( 'date', $item->datetime, 'D, d M Y, h:iA' );
             echo "</span>";
 			?>
 		</li>
 		<?php endforeach; ?>
 	</ul>
-    <a id="scout_view_all" href="<?php echo JRoute::_( "index.php?option=com_scout&view=logs&filter_order=tbl.datetime&filter_direction=DESC" ); ?>"><?php echo JText::_( "View All Activity" ); ?></a>
+    <a id="scout_view_all" href="<?php echo JRoute::_( "index.php?option=com_scout&view=logs&filter_order=tbl.datetime&filter_direction=DESC" ); ?>"><?php echo JText::_( "MOD_AMBRA_VIEW_ALL_ACTIVITY" ); ?></a>
 <?php else : ?>
 	<? echo JText::_('Nothing to Show'); ?>
 <?php endif; ?>
