@@ -35,8 +35,8 @@ class plgUserScout extends JPlugin
             return $result;
         }
         public function onUserBeforeSave($user, $isnew, $new){
-            $result = $this->onBeforeStoreUser($user, $isnew, $new);
-            return $result;     
+         //   $result = $this->onBeforeStoreUser($user, $isnew, $new);
+         //   return $result;     
         }
         public function onUserAfterSave($user, $isnew, $success, $msg){
             $result = $this->onAfterStoreUser($user, $isnew, $success, $msg);
