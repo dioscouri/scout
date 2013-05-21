@@ -94,7 +94,7 @@ class ScoutModelObjects extends ScoutModelBase
     {
             $item->link = 'index.php?option=com_scout&controller=objects&view=objects&task=edit&id='.$item->object_id;
             
-            parent::prepareItem(&$item, $key, $refresh );
+            parent::prepareItem($item, $key, $refresh );
         
     }
 

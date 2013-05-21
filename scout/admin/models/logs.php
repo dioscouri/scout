@@ -131,7 +131,7 @@ class ScoutModelLogs extends ScoutModelBase
     {
             $item->link = 'index.php?option=com_scout&controller=logs&view=logs&task=edit&id='.$item->log_id;
             
-            parent::prepareItem(&$item, $key, $refresh );
+            parent::prepareItem($item, $key, $refresh );
         
     }
 

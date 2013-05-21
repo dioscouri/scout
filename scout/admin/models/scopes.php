@@ -87,7 +87,7 @@ class ScoutModelScopes extends ScoutModelBase
     {
       $item->link = 'index.php?option=com_scout&controller=scopes&view=scopes&task=edit&id='.$item->scope_id;
             
-            parent::prepareItem(&$item, $key, $refresh );
+            parent::prepareItem($item, $key, $refresh );
         
     }
 

@@ -72,7 +72,7 @@ class ScoutModelVerbs extends ScoutModelBase
     {
          $item->link = 'index.php?option=com_scout&controller=verbs&view=verbs&task=edit&id='.$item->verb_id;
             
-            parent::prepareItem(&$item, $key, $refresh );
+         parent::prepareItem($item, $key, $refresh );
         
     }
 

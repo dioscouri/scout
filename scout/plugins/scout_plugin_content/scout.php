@@ -90,7 +90,7 @@ class plgContentScout extends JPlugin
     }
     
     public function onContentAfterSave( $context, &$article, $isNew ) {
-        $this->onAfterContentSave(&$article, $isNew );
+        $this->onAfterContentSave($article, $isNew );
     }
     
 

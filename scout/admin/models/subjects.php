@@ -72,7 +72,7 @@ class ScoutModelSubjects extends ScoutModelBase
     {
           $item->link = 'index.php?option=com_scout&controller=subjects&view=subjects&task=edit&id='.$item->subject_id;
             
-            parent::prepareItem(&$item, $key, $refresh );
+          parent::prepareItem($item, $key, $refresh );
         
     }   	
 	
